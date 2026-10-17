@@ -1,13 +1,14 @@
 15/10/26:
-Blue, 32,
-Pink, 5,
-Brown, 134,
-Green, 23,
-Yellow, 7,
-Orange, 36,
-White, 241
+Blue,32
+Pink,5
+Brown,134
+Green,23
+Yellow,7
+Orange,36
+White,241
 16/10/26:
-Blue, 69,
-Pink, 129,
-Brown, 136,
-White, 79,
+Blue,69
+Pink,129
+Brown,136
+White,79
+16/10/26:

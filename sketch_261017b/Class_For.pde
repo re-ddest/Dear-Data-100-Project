@@ -3,9 +3,9 @@ class Circles {
   float size;
   color colorOf;
   
-  Circles (float size, color colorOf) {
+  Circles (float messages, color colorOf) {
   
-    this.size = size;
+    this.size = map(messages, 0, 200, 10, 100);
     this.colorOf = colorOf;
   
   }
