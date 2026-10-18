@@ -1,19 +1,18 @@
-class Circles {
+class Flower {
 
-  float size;
+  float StemSize;
   color colorOf;
   
-  Circles (float messages, color colorOf) {
+  Flower (float messages, color colorOf) {
   
-    this.size = map(messages, 0, 200, 10, 100);
+    this.StemSize = map(messages, 0, 200, 10, 100);
     this.colorOf = colorOf;
   
   }
   
   void make () {
     
-    fill(this.colorOf);
-    circle(width/2, height/2, this.size);
+    
   
   }
 

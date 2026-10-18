@@ -5,10 +5,11 @@
 
 Table data;
 int dayCount = 0;
+String dayIndex;
 ArrayList<String> dates = new ArrayList<String>();
 
 void setup() {
-  size(1000, 1000);
+  size(400, 400);
 
   // Load the CSV file (first row contains column names)
   data = loadTable("DearData.csv", "header");
@@ -39,6 +40,9 @@ void setup() {
 
 void draw() {
   background(30);
+  // create the grass
+  fill(0,153,0);
+  rect(0, height/1.4, width, height/2);
 }
 
 void keyPressed(){
@@ -46,15 +50,32 @@ void keyPressed(){
  if (key == CODED) 
  {
     // LOOP THROUGH THE ARRAYLIST OF DATES AND ENSURE THAT THE VALUES ARE WITHIN RANGE
+    // THEN FIND THE VALUES THAT ARE WITHIN THIS DATE
     // ELSE DO NOTHING!
     if (keyCode == RIGHT && dayCount < dates.size() - 1) {
        dayCount++;
-       println(dates.get(dayCount));
+       dayIndex = dates.get(dayCount);
+       println(dayIndex);
+       Iterable<TableRow> dailyData = data.findRows(dayIndex, "Date");
+       for (TableRow row : dailyData) 
+       {
+          println(row.getString("Person"));
+          println(row.getInt("Amount"));
+       }
     } 
     else if (keyCode == LEFT && dayCount > 0)
     {
        dayCount--;
-       println(dates.get(dayCount));
+       dayIndex = dates.get(dayCount);
+       println(dayIndex);
+       Iterable<TableRow> dailyData = data.findRows(dayIndex, "Date");
+       
+       for (TableRow row : dailyData) 
+       {
+          println(row.getString("Person"));
+          println(row.getInt("Amount"));
+       }
+       
     }
  } 
   
