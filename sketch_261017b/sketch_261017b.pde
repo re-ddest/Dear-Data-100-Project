@@ -7,19 +7,20 @@ Table data;
 int dayCount = 0;
 String dayIndex;
 ArrayList<String> dates = new ArrayList<String>();
+ArrayList<Flower> flowers = new ArrayList<Flower>();
 
 void setup() {
-  size(400, 400);
+  size(800, 800);
 
-  // Load the CSV file (first row contains column names)
+  // load the CSV file
   data = loadTable("DearData.csv", "header");
 
-  // Loop through every row in the CSV and add dates to the array list
+  // loop through every row in the CSV and add dates to the array list
   for (TableRow row : data.rows()) {
 
     String date = row.getString("Date");
     
-    // give this arraylist all dates so we can scroll through in arraylist
+    // give this arraylist all dates so we can scroll left and right in keyPressed
     if (dates.contains(date)) {
       println("Already found this date:" + date);
     } else
@@ -36,13 +37,6 @@ void setup() {
     println("Amount: " + amount);
     printArray(dates);
   }
-}
-
-void draw() {
-  background(30);
-  // create the grass
-  fill(0,153,0);
-  rect(0, height/1.4, width, height/2);
 }
 
 void keyPressed(){
@@ -79,4 +73,13 @@ void keyPressed(){
     }
  } 
   
+}
+
+void draw() {
+  background(0,170,255);
+  noStroke();
+  // create the grass
+  fill(0,193,0);
+  rect(0, height/1.4, width, height/2);
+  // initialise test
 }
